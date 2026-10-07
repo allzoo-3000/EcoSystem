@@ -1,0 +1,2406 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL International | Międzynarodowy Transport Ciężarowy & Logistyka UE</title>
+  <meta name="description" content="MPL International - Profesjonalny transport międzynarodowy w Unii Europejskiej. Flota 20 nowoczesnych ciągników Euro 6. Projekt strategiczny 12 000 000 PLN.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0a2540;
+      --primary-dark: #061727;
+      --primary-light: #123b66;
+      --blue-accent: #0066cc;
+      --blue-light: #0099ff;
+      --blue-soft: #e8f3fc;
+      --accent-green: #10b981;
+      --accent-gold: #f59e0b;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --bg-white: #ffffff;
+      --bg-light: #f8fafc;
+      --bg-slate: #f1f5f9;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(10,37,64,0.1), 0 8px 10px -6px rgba(10,37,64,0.06);
+      --shadow-xl: 0 20px 35px -10px rgba(10,37,64,0.18);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+
+    /* Top Utility Bar */
+    .top-bar {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      font-size: 0.825rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .top-bar-items {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-bar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .top-bar-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--blue-light);
+    }
+
+    /* Navbar */
+    .header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .header.scrolled {
+      box-shadow: var(--shadow-md);
+      padding: 4px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.45rem;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+    }
+
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--blue-accent), var(--primary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      min-width: 48px;
+      box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-sub {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue-accent);
+      font-weight: 700;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--blue-accent);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue-accent);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      background: var(--bg-slate);
+      border-radius: 20px;
+      padding: 3px;
+      border: 1px solid var(--border-color);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-accent), #004d99);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0, 102, 204, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0052a3, #003366);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 102, 204, 0.45);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--primary);
+      border-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--blue-accent);
+      color: var(--blue-accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--blue-accent);
+      color: #fff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 8px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(145deg, #07192f 0%, #0d284e 60%, #103b6e 100%);
+      color: #fff;
+      padding: 110px 0 130px;
+      overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 80% 20%, rgba(0, 153, 255, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        linear-gradient(to bottom, rgba(7, 25, 47, 0.8), rgba(7, 25, 47, 0.92)),
+        url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      opacity: 0.92;
+      z-index: 1;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      z-index: 2;
+      opacity: 0.6;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .hero-pill-eu {
+      background: rgba(0, 102, 204, 0.25);
+      border: 1px solid rgba(0, 153, 255, 0.4);
+      color: #93c5fd;
+    }
+
+    .hero-pill-parp {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #fde68a;
+    }
+
+    .hero-title {
+      font-size: 3.4rem;
+      color: #ffffff;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: #cbd5e1;
+      margin-bottom: 36px;
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    /* Hero Metrics Glass Card */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    }
+
+    .hero-card-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero-card-title {
+      color: #fff;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      background: rgba(10, 37, 64, 0.45);
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: var(--transition);
+    }
+
+    .stat-item:hover {
+      border-color: rgba(0, 153, 255, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .stat-number.gold {
+      color: #fbbf24;
+    }
+
+    .stat-number.green {
+      color: #34d399;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .hero-badges-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot-pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--blue-accent);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-section {
+      background: var(--bg-white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .about-floating-card {
+      position: absolute;
+      bottom: -30px;
+      right: -20px;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      max-width: 280px;
+    }
+
+    .floating-card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--blue-soft);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-accent);
+      margin-bottom: 12px;
+    }
+
+    .about-content-header {
+      margin-bottom: 24px;
+    }
+
+    .about-text {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .about-hl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .about-hl-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      color: var(--blue-accent);
+      margin-top: 2px;
+    }
+
+    .about-hl-title {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .about-hl-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Fleet Section */
+    .fleet-section {
+      background: var(--bg-slate);
+      position: relative;
+    }
+
+    .fleet-specs-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      padding: 48px;
+      margin-bottom: 50px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fleet-banner-text h3 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .fleet-banner-text p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .fleet-banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid var(--accent-green);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .fleet-tech-pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .tech-pill svg {
+      width: 20px;
+      height: 20px;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .fleet-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .fleet-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fleet-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--blue-accent);
+    }
+
+    .fleet-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .fleet-card-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .fleet-card-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--blue-accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .fleet-card-title {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .fleet-card-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .fleet-features {
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      margin-top: auto;
+    }
+
+    .fleet-feature-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .fleet-feature-row svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-green);
+      flex-shrink: 0;
+    }
+
+    /* Services Section */
+    .services-section {
+      background: var(--bg-white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .service-card:hover {
+      border-color: var(--blue-accent);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+    }
+
+    .service-icon-box {
+      width: 60px;
+      height: 60px;
+      background: var(--blue-soft);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-accent);
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: var(--blue-accent);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .service-card-title {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+
+    .service-card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .service-card-list {
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+
+    .service-card-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .service-card-list li svg {
+      width: 14px;
+      height: 14px;
+      color: var(--blue-accent);
+    }
+
+    /* Routes Corridor Banner */
+    .corridor-banner {
+      margin-top: 60px;
+      background: var(--bg-slate);
+      border-radius: var(--radius);
+      padding: 36px;
+      border: 1px solid var(--border-color);
+    }
+
+    .corridor-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .corridor-text h4 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .corridor-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .corridor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .corridor-badge {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Strategic PARP / Investor Section */
+    .strategic-section {
+      background: linear-gradient(180deg, #07192f 0%, #0d284e 100%);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strategic-section::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 153, 255, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .strategic-section .section-title {
+      color: #ffffff;
+    }
+
+    .strategic-section .section-desc {
+      color: #cbd5e1;
+    }
+
+    .project-hero-badge {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.1));
+      border: 1px solid var(--accent-gold);
+      color: #fde68a;
+      padding: 10px 24px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+    }
+
+    .parp-callout {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 50px;
+      backdrop-filter: blur(12px);
+    }
+
+    .parp-callout-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .parp-headline {
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .parp-text {
+      color: #cbd5e1;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .parp-badge-card {
+      background: rgba(10, 37, 64, 0.6);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .parp-badge-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #fbbf24;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .parp-badge-sub {
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .strategic-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .strat-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .strat-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(56, 189, 248, 0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+
+    .strat-card-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 12px;
+    }
+
+    .strat-card-title {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .strat-card-desc {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Polish Impact Box */
+    .poland-impact-box {
+      margin-top: 50px;
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+
+    .poland-impact-inner {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .poland-flag-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: #ffffff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .poland-impact-text h4 {
+      color: #ffffff;
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .poland-impact-text p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--bg-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 60px;
+    }
+
+    .contact-info-card {
+      background: var(--primary);
+      border-radius: var(--radius-lg);
+      color: #fff;
+      padding: 44px;
+      box-shadow: var(--shadow-xl);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-info-card h3 {
+      color: #fff;
+      font-size: 1.9rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-card p {
+      color: #cbd5e1;
+      margin-bottom: 36px;
+      font-size: 1.02rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .contact-method-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .contact-method-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .contact-method-details span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .contact-method-details a, .contact-method-details strong {
+      font-size: 1.05rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .contact-method-details a:hover {
+      color: #38bdf8;
+    }
+
+    .compliance-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    /* Contact Form */
+    .contact-form-wrapper {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-form-wrapper h4 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .contact-form-wrapper p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: var(--bg-light);
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--blue-accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      padding: 70px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand .logo {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 340px;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-link {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    .footer-link:hover {
+      color: #38bdf8;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Notification Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+      transform: translateY(150%);
+      transition: transform 0.4s ease;
+      border-left: 4px solid var(--accent-green);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid, .parp-callout-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .fleet-specs-banner {
+        grid-template-columns: 1fr;
+      }
+      .fleet-cards-grid, .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .strategic-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-title {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar {
+        display: none;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        padding: 30px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        gap: 20px;
+      }
+      .nav-menu.open {
+        transform: translateY(0);
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .fleet-cards-grid, .services-grid, .strategic-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .corridor-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement / Compliance Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-items">
+        <span class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-i18n="top_routes">Korytarze Transportowe: Cała Unia Europejska</span>
+        </span>
+        <span class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-i18n="top_fleet">Flota 20 Ciągników Euro 6 | 100% Niska Emisja</span>
+        </span>
+      </div>
+      <div class="top-bar-items">
+        <span class="top-bar-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <a href="mailto:contact.allzoo@gmail.com" style="color: inherit;">contact.allzoo@gmail.com</a>
+        </span>
+        <span class="top-bar-item" style="color: #fbbf24; font-weight: 700;">
+          ★ <span data-i18n="top_parp_tag">Projekt Inwestycyjny PARP: 12 000 000 PLN</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <div class="logo-badge">MPL</div>
+        <div class="logo-text">
+          <span>MPL INTERNATIONAL</span>
+          <span class="logo-sub" data-i18n="logo_sub">Logistyka & Transport UE</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link" data-i18n="nav_about">O nas</a>
+        <a href="#fleet" class="nav-link" data-i18n="nav_fleet">Flota (20 Ciągników)</a>
+        <a href="#services" class="nav-link" data-i18n="nav_services">Usługi</a>
+        <a href="#strategic" class="nav-link" data-i18n="nav_strategic">Projekt PARP (12M PLN)</a>
+        <a href="#why-us" class="nav-link" data-i18n="nav_why">Dlaczego My</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Bilingual Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btnPl" onclick="setLanguage('pl')">PL</button>
+          <button class="lang-btn" id="btnEn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.88rem;" data-i18n="nav_cta">
+          Zapytaj o Fracht
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <svg style="width: 28px; height: 28px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-pattern"></div>
+    <div class="container hero-container">
+      <div class="hero-grid">
+        <div class="hero-text-content">
+          <div class="hero-badge-wrap">
+            <span class="hero-pill hero-pill-eu">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+              <span data-i18n="hero_pill_1">Międzynarodowy Transport Drogowy UE</span>
+            </span>
+            <span class="hero-pill hero-pill-parp">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
+              <span data-i18n="hero_pill_2">Inwestycja Strategiczna 12 000 000 PLN</span>
+            </span>
+          </div>
+
+          <h1 class="hero-title" data-i18n="hero_title">
+            Nowoczesny Transport Międzynarodowy. <span>Strategiczny Rozwój w Sercu Europy.</span>
+          </h1>
+
+          <p class="hero-desc" data-i18n="hero_desc">
+            MPL International realizuje regularne przewozy ładunków na kluczowych szlakach Unii Europejskiej. Dysponujemy niezawodną flotą 20 nowoczesnych ciągników siodłowych Euro 6 z zaawansowaną telematyką 24/7. Wdrażamy strategiczny program inwestycyjny o wartości 12 mln PLN wspierający polski sektor TSL i zrównoważoną logistykę europejską.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#strategic" class="btn btn-primary" data-i18n="hero_cta_primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              Poznaj Projekt 12M PLN
+            </a>
+            <a href="#fleet" class="btn btn-secondary" data-i18n="hero_cta_secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+              Zobacz Naszą Flotę
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Stats Glass Card -->
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <h3 class="hero-card-title">
+              <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+              <span data-i18n="hero_stats_title">Wskaźniki Operacyjne & Skala</span>
+            </h3>
+          </div>
+
+          <div class="hero-stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">20</div>
+              <div class="stat-label" data-i18n="stat_trucks">Ciągników Euro 6 w Flocie</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number gold">12 mln zł</div>
+              <div class="stat-label" data-i18n="stat_project_val">Wartość Nowego Projektu (PARP)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number green">100%</div>
+              <div class="stat-label" data-i18n="stat_eu_coverage">Zasięg Korytarzy UE</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">99.8%</div>
+              <div class="stat-label" data-i18n="stat_ontime">Wskaźnik Terminowości Dostaw</div>
+            </div>
+          </div>
+
+          <div class="hero-badges-row">
+            <span class="badge-tag">
+              <span class="dot-pulse"></span>
+              <span data-i18n="hero_badge_active">Monitorowanie GPS & Telematyka Live</span>
+            </span>
+            <span class="badge-tag">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Norma Emisji Euro 6</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="section-padding about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Centrum Logistyczne MPL International" class="about-img-main">
+          <div class="about-floating-card">
+            <div class="floating-card-icon">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 4px;" data-i18n="about_float_title">Polska Dynamika, Europejski Zasięg</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted);" data-i18n="about_float_desc">Zintegrowany łańcuch dostaw łączący Polskę z kluczowymi rynkami Europy Zachodniej i Południowej.</p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-content-header">
+            <span class="section-eyebrow" data-i18n="about_eyebrow">Kim Jesteśmy</span>
+            <h2 class="section-title" data-i18n="about_title">Stabilny Partner w Międzynarodowym Transporcie Ciężarowym</h2>
+          </div>
+
+          <p class="about-text" data-i18n="about_p1">
+            <strong>MPL International</strong> to polskie przedsiębiorstwo transportowo-logistyczne zorientowane na realizację bezpiecznych, precyzyjnych przewozów na terenie Unii Europejskiej. Od początku naszej działalności stawiamy na najwyższe standardy techniczne, rzetelność partnerską oraz elastyczność w odpowiedzi na zmienne potrzeby globalnych łańcuchów dostaw.
+          </p>
+
+          <p class="about-text" data-i18n="about_p2">
+            Obecnie dysponujemy <strong>flotą 20 nowoczesnych jednostek transportowych</strong> spełniających rygorystyczne normy środowiskowe Euro 6. Nasz zespół wykwalifikowanych spedytorów i doświadczonych kierowców gwarantuje nieprzerwaną kontrolę nad ładunkiem od miejsca załadunku po rozładunek w dowolnym punkcie Europy.
+          </p>
+
+          <div class="about-highlights">
+            <div class="about-hl-item">
+              <svg class="about-hl-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <div>
+                <h4 class="about-hl-title" data-i18n="about_hl1_title">Bezpieczeństwo Ładunków</h4>
+                <p class="about-hl-desc" data-i18n="about_hl1_desc">Pełne ubezpieczenie OCP do wysokości 1 000 000 EUR oraz stały nadzór GPS.</p>
+              </div>
+            </div>
+            <div class="about-hl-item">
+              <svg class="about-hl-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div>
+                <h4 class="about-hl-title" data-i18n="about_hl1_title2">Dostawy Just-In-Time</h4>
+                <p class="about-hl-desc" data-i18n="about_hl1_desc2">Precyzyjny dobór tras i podwójne obsady kierowców na trasach krytycznych.</p>
+              </div>
+            </div>
+            <div class="about-hl-item">
+              <svg class="about-hl-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <div>
+                <h4 class="about-hl-title" data-i18n="about_hl1_title3">Cyfrowa Dyspozytornia</h4>
+                <p class="about-hl-desc" data-i18n="about_hl1_desc3">System ERP/TMS z bezpośrednim dostępem klienta do śledzenia statusu zlecenia.</p>
+              </div>
+            </div>
+            <div class="about-hl-item">
+              <svg class="about-hl-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div>
+                <h4 class="about-hl-title" data-i18n="about_hl1_title4">Doświadczenie na Rynkach UE</h4>
+                <p class="about-hl-desc" data-i18n="about_hl1_desc4">Płynna znajomość procedur międzynarodowych i przepisów Pakietu Mobilności.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Section -->
+  <section class="section-padding fleet-section" id="fleet">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow" data-i18n="fleet_eyebrow">Nasze Zaplecze Sprzętowe</span>
+        <h2 class="section-title" data-i18n="fleet_title">Nowoczesna Flota 20 Ciągników Euro 6</h2>
+        <p class="section-desc" data-i18n="fleet_desc">
+          Dysponujemy własnym, jednolitym i zaawansowanym taborem pojazdów ciężarowych. Średni wiek naszych pojazdów nie przekracza 2,5 roku, co gwarantuje bezawaryjność, niskie zużycie paliwa oraz minimalną emisję dwutlenku węgla.
+        </p>
+      </div>
+
+      <!-- Fleet Specs Tech Highlight Banner -->
+      <div class="fleet-specs-banner">
+        <div class="fleet-banner-text">
+          <span class="fleet-banner-badge" data-i18n="fleet_eco_badge">Standard Ekologiczny Euro 6 Step E</span>
+          <h3 data-i18n="fleet_banner_h3">20 Zestawów Ciężarowych Gotowych do Trudnych Zadań</h3>
+          <p data-i18n="fleet_banner_p">
+            Każdy pojazd we flocie MPL International wyposażony jest w asystentów jazdy, systemy awaryjnego hamowania, telematykę satelitarną oraz certyfikowane naczepy typu Standard i Mega z certyfikatem XL (DIN EN 12642).
+          </p>
+        </div>
+        <div class="fleet-tech-pill-grid">
+          <div class="tech-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span data-i18n="tech_pill_1">20x Ciągniki Euro 6</span>
+          </div>
+          <div class="tech-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <span data-i18n="tech_pill_2">Telematyka GPS 24/7</span>
+          </div>
+          <div class="tech-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <span data-i18n="tech_pill_3">Naczepy Certyfikat XL</span>
+          </div>
+          <div class="tech-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            <span data-i18n="tech_pill_4">Eco-Drive & Redukcja CO2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleet Cards -->
+      <div class="fleet-cards-grid">
+        <div class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80" alt="Ciągnik siodłowy Euro 6 MPL International" class="fleet-card-img">
+          <div class="fleet-card-body">
+            <span class="fleet-card-tag" data-i18n="fleet_card1_tag">Ciągniki Siodłowe</span>
+            <h3 class="fleet-card-title" data-i18n="fleet_card1_title">Klasa Ciężka Euro 6</h3>
+            <p class="fleet-card-desc" data-i18n="fleet_card1_desc">Wydajne jednostki napędowe o mocy 480-500 KM spełniające najbardziej rygorystyczne normy emisji spalin. Optymalizacja zużycia paliwa na dalekich trasach tranzytowych.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card1_f1">20 pojazdów w regularnym obiegu</span>
+              </div>
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card1_f2">Systemy wspomagania kierowcy ADAS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Naczepy kurtynowe Mega i Standard" class="fleet-card-img">
+          <div class="fleet-card-body">
+            <span class="fleet-card-tag" data-i18n="fleet_card2_tag">Naczepy FTL & Mega</span>
+            <h3 class="fleet-card-title" data-i18n="fleet_card2_title">Pojemność do 100 m³</h3>
+            <p class="fleet-card-desc" data-i18n="fleet_card2_desc">Wielozadaniowe naczepy firanki (Curtainsider) o wysokości wewnętrznej do 3 metrów, wyposażone w podnoszone dachy do szybkiego załadunku suwnicą.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card2_f1">33/34 Europalety pojemności</span>
+              </div>
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card2_f2">Certyfikat Bezpieczeństwa XL (Code-XL)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Systemy telematyczne i nadzór GPS" class="fleet-card-img">
+          <div class="fleet-card-body">
+            <span class="fleet-card-tag" data-i18n="fleet_card3_tag">Technologia & AI</span>
+            <h3 class="fleet-card-title" data-i18n="fleet_card3_title">Inteligentna Telematyka</h3>
+            <p class="fleet-card-desc" data-i18n="fleet_card3_desc">Cyfrowa integracja czujników pokładowych, CAN bus, monitoring stylu jazdy kierowcy, natychmiastowe alerty geolokalizacyjne i kalkulacja ETA w czasie rzeczywistym.</p>
+            <div class="fleet-features">
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card3_f1">Podgląd pozycji pojazdu na żywo dla klienta</span>
+              </div>
+              <div class="fleet-feature-row">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span data-i18n="fleet_card3_f2">Redukcja pustych kilometrów o 22%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding services-section" id="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow" data-i18n="services_eyebrow">Zakres Operacyjny</span>
+        <h2 class="section-title" data-i18n="services_title">Transport Międzynarodowy & Logistyka</h2>
+        <p class="section-desc" data-i18n="services_desc">
+          Kompleksowa obsługa ładunków handlowych i przemysłowych na terytorium Unii Europejskiej. Zapewniamy płynność operacyjną, doradztwo transportowe i terminową realizację zleceń.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="service1_title">Transport Całopojazdowy (FTL)</h3>
+          <p class="service-card-desc" data-i18n="service1_desc">
+            Dedykowane przewozy całopojazdowe bezpośrednio od nadawcy do odbiorcy bez przeładunków pośrednich. Maksymalne bezpieczeństwo i optymalny czas tranzytu w relacjach międzynarodowych.
+          </p>
+          <ul class="service-card-list">
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s1_l1">Do 25 ton ładowności</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s1_l2">Stałe linie wahadłowe w UE</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s1_l3">Dedykowany spedytor 24/7</span></li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="service2_title">Transport Częściowy & Drobnicowy (LTL)</h3>
+          <p class="service-card-desc" data-i18n="service2_desc">
+            Efektywne łączenie mniejszych partii ładunków na tych samych trasach europejskich. Optymalizacja kosztów frachtu przy zachowaniu wysokiej regularności wyjazdów.
+          </p>
+          <ul class="service-card-list">
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s2_l1">Elastyczne zarządzanie przestrzenią</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s2_l2">Regularne konsolidacje Polska-Zachód</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s2_l3">Bieżący monitoring statusu przesyłki</span></li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="service-card-title" data-i18n="service3_title">Przewozy Ekspresowe & Just-In-Time</h3>
+          <p class="service-card-desc" data-i18n="service3_desc">
+            Kluczowe rozwiązanie dla branży motoryzacyjnej, elektronicznej i produkcyjnej, gdzie opóźnienie oznacza przestój fabryki. Gwarantowany natychmiastowy podstawienie zestawu.
+          </p>
+          <ul class="service-card-list">
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s3_l1">Podwójna obsada kierowców</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s3_l2">Priorytetowy czas tranzytu</span></li>
+            <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="s3_l3">Wsparcie dyspozytorskie non-stop</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Corridor Highlights -->
+      <div class="corridor-banner">
+        <div class="corridor-grid">
+          <div class="corridor-text">
+            <h4 data-i18n="corridor_title">Główne Korytarze Przewozowe UE</h4>
+            <p data-i18n="corridor_desc">Obsługujemy codzienne rotacje na kluczowych szlakach europejskich z pełną znajomością lokalnych regulacji drogowych.</p>
+          </div>
+          <div class="corridor-tags">
+            <span class="corridor-badge">🇩🇪 Niemcy (DE)</span>
+            <span class="corridor-badge">🇫🇷 Francja (FR)</span>
+            <span class="corridor-badge">🇳🇱 Holandia (NL)</span>
+            <span class="corridor-badge">🇧🇪 Belgia (BE)</span>
+            <span class="corridor-badge">🇮🇹 Włochy (IT)</span>
+            <span class="corridor-badge">🇪🇸 Hiszpania (ES)</span>
+            <span class="corridor-badge">🇨🇿 Czechy & Słowacja</span>
+            <span class="corridor-badge">🇦🇹 Austria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Section (Target: PARP & Investors - 12,000,000 PLN Project) -->
+  <section class="section-padding strategic-section" id="strategic">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="section-header text-center">
+        <div class="project-hero-badge">
+          ★ <span data-i18n="strat_badge">Projekt Rozwojowy: 12 000 000 PLN | PARP / Inwestorzy</span>
+        </div>
+        <h2 class="section-title" data-i18n="strat_title">Strategiczny Projekt Cyfrowej i Zielonej Transformacji Logistyki</h2>
+        <p class="section-desc" data-i18n="strat_desc">
+          MPL International przygotowuje wielkoskalowy projekt inwestycyjny o wartości 12 milionów złotych ukierunkowany na wzmocnienie konkurencyjności polskiego transportu na arenie międzynarodowej, dekarbonizację floty i wdrożenie rozwiązań Przemysłu 4.0.
+        </p>
+      </div>
+
+      <!-- PARP Callout Box -->
+      <div class="parp-callout">
+        <div class="parp-callout-grid">
+          <div>
+            <h3 class="parp-headline" data-i18n="parp_head">Inwestycja w Polską Infrastrukturę Logistyczną & Nowoczesne Kadry</h3>
+            <p class="parp-text" data-i18n="parp_body">
+              W ramach wnioskowanego projektu inwestycyjnego, przygotowywanego w relacji z <strong>Polską Agencją Rozwoju Przedsiębiorczości (PARP)</strong> oraz partnerami inwestycyjnymi, MPL International zrealizuje całościową modernizację operacyjną: rozbudowę bazy taborowej, wdrożenie predykcyjnego systemu zarządzania trasami opartego o uczenie maszynowe (AI Logistics Core), optymalizację bilansu energetycznego baz transportowych oraz utworzenie wysokospecjalistycznych miejsc pracy w Polsce.
+            </p>
+          </div>
+          <div class="parp-badge-card">
+            <div class="parp-badge-val">12 000 000 PLN</div>
+            <div class="parp-badge-sub" data-i18n="parp_badge_sub">Wartość Budżetu Inwestycyjnego</div>
+            <div style="margin-top: 12px; font-size: 0.8rem; color: #cbd5e1;" data-i18n="parp_badge_target">Dedykowane: PARP & Inwestorzy Prywatni</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="strategic-cards-grid">
+        <div class="strat-card">
+          <div class="strat-card-num">01</div>
+          <h3 class="strat-card-title" data-i18n="strat_c1_title">Zielona Flota & Ekologia</h3>
+          <p class="strat-card-desc" data-i18n="strat_c1_desc">Dalsza redukcja śladu węglowego (GHG Scope 1 & 2), integracja naczep aerodynamicznych, testowanie napędów alternatywnych oraz przygotowanie do elektryfikacji tras regionalnych.</p>
+        </div>
+
+        <div class="strat-card">
+          <div class="strat-card-num">02</div>
+          <h3 class="strat-card-title" data-i18n="strat_c2_title">AI & Cyfrowa Telematyka</h3>
+          <p class="strat-card-desc" data-i18n="strat_c2_desc">Wdrożenie algorytmów predykcyjnych minimalizujących puste przebiegi (Empty Mileage Reduction) o 28%, dynamiczne planowanie tras z uwzględnieniem warunków drogowych i czasu pracy.</p>
+        </div>
+
+        <div class="strat-card">
+          <div class="strat-card-num">03</div>
+          <h3 class="strat-card-title" data-i18n="strat_c3_title">Rozbudowa Skali Taboru</h3>
+          <p class="strat-card-desc" data-i18n="strat_c3_desc">Zwiększenie operacyjnej floty powyżej obecnych 20 zestawów, zakup specjalistycznych naczep typu Mega oraz wdrożenie zautomatyzowanego serwisu prewencyjnego (Predictive Maintenance).</p>
+        </div>
+
+        <div class="strat-card">
+          <div class="strat-card-num">04</div>
+          <h3 class="strat-card-title" data-i18n="strat_c4_title">Wzrost Wartości dla Inwestora</h3>
+          <p class="strat-card-desc" data-i18n="strat_c4_desc">Skalowalny model biznesowy z wysokim wskaźnikiem ROI, zdywersyfikowanym portfelem stałych kontraktów w UE oraz odpornością na cykle koniunkturalne w handlu międzynarodowym.</p>
+        </div>
+      </div>
+
+      <!-- Polish Economic Impact Box -->
+      <div class="poland-impact-box" id="why-us">
+        <div class="poland-impact-inner">
+          <div class="poland-flag-icon">🇵🇱</div>
+          <div class="poland-impact-text">
+            <h4 data-i18n="impact_title">Dlaczego Ten Projekt Jest Kluczowy dla Polski?</h4>
+            <p data-i18n="impact_p">
+              Polska jest niekwestionowanym sercem transportu drogowego w Europie, odpowiadającym za ponad 20% przewozów międzynarodowych w UE. Projekt MPL International o wartości <strong>12 000 000 PLN</strong> bezpośrednio wzmacnia pozycję rodzimych przedsiębiorstw w łańcuchu wartości, zatrzymuje kapitał w kraju, buduje przewagę technologiczną w dobie europejskiego Zielonego Ładu (European Green Deal) oraz generuje stabilne miejsca pracy z europejskimi standardami płacowymi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Inquiry Section -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow" data-i18n="contact_eyebrow">Nawiąż Współpracę</span>
+        <h2 class="section-title" data-i18n="contact_title">Skontaktuj Się z MPL International</h2>
+        <p class="section-desc" data-i18n="contact_desc">
+          Zapraszamy do kontaktu inwestorów, przedstawicieli instytucji finansujących oraz przedsiębiorstwa poszukujące niezawodnego przewoźnika na liniach międzynarodowych.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info Card -->
+        <div class="contact-info-card">
+          <div>
+            <h3 data-i18n="ci_card_title">Dane Kontaktowe</h3>
+            <p data-i18n="ci_card_desc">Nasz zespół spedytorów oraz biuro zarządu odpowiada na zapytania operacyjne i inwestycyjne w ciągu maksymalnie 2 godzin.</p>
+
+            <div class="contact-methods">
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div class="contact-method-details">
+                  <span data-i18n="ci_email_label">Bezpośredni Adres E-mail</span>
+                  <a href="mailto:contact.allzoo@gmail.com">contact.allzoo@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <div class="contact-method-details">
+                  <span data-i18n="ci_web_label">Oficjalna Domena</span>
+                  <strong>mplinternational.pl</strong>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div class="contact-method-details">
+                  <span data-i18n="ci_location_label">Siedziba i Baza Operacyjna</span>
+                  <strong>Polska / European Union Hub</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="compliance-pill">
+            <strong style="color: #38bdf8; display: block; margin-bottom: 4px;" data-i18n="ci_compliance_title">Dokumentacja Projektu PARP:</strong>
+            <span data-i18n="ci_compliance_text">Wszelkie zapytania dotyczące studium wykonalności, biznesplanu 12M PLN oraz audytów technicznych prosimy kierować na adres dedykowany.</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h4 data-i18n="form_title">Formularz Zgłoszeniowy & Wycena</h4>
+          <p data-i18n="form_subtitle">Wypełnij poniższe pola, a nasz koordynator skontaktuje się z Tobą niezwłocznie.</p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="senderName" data-i18n="form_name">Imię i Nazwisko / Reprezentant *</label>
+                <input type="text" id="senderName" class="form-input" placeholder="Jan Kowalski" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="companyName" data-i18n="form_company">Nazwa Firmy / Instytucji *</label>
+                <input type="text" id="companyName" class="form-input" placeholder="Nazwa Sp. z o.o. / Fundusz" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="senderEmail" data-i18n="form_email">Adres E-mail *</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="jan@firma.pl" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="senderPhone" data-i18n="form_phone">Numer Telefonu</label>
+                <input type="tel" id="senderPhone" class="form-input" placeholder="+48 000 000 000">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label" for="inquiryType" data-i18n="form_type">Rodzaj Zapytania *</label>
+                <select id="inquiryType" class="form-select" required>
+                  <option value="freight" data-i18n="opt_freight">Wycena Frachtu Międzynarodowego (FTL / LTL)</option>
+                  <option value="parp" data-i18n="opt_parp">Projekt Rozwojowy 12M PLN / Kontakt PARP / Grant</option>
+                  <option value="investor" data-i18n="opt_investor">Relacje Inwestorskie & Kapitałowe</option>
+                  <option value="partnership" data-i18n="opt_partner">Stała Współpraca Spedycyjna</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label" for="messageText" data-i18n="form_msg">Treść Wiadomości / Specyfikacja Ładunku *</label>
+                <textarea id="messageText" class="form-textarea" placeholder="Opisz trasę, rodzaj ładunku, termin lub zakres pytań dotyczących projektu..." required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;" data-i18n="form_submit">
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+              Wyślij Wiadomość
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <div class="logo-badge">MPL</div>
+            <div class="logo-text">
+              <span>MPL INTERNATIONAL</span>
+              <span class="logo-sub">Logistyka & Transport UE</span>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">
+            Nowoczesny polski przewoźnik międzynarodowy obsługujący stałe szlaki w Unii Europejskiej. Flota 20 pojazdów Euro 6. Projekt strategiczny 12 000 000 PLN.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="f_col1_title">Firma & Strategia</h5>
+          <div class="footer-links">
+            <a href="#about" class="footer-link" data-i18n="nav_about">O nas</a>
+            <a href="#fleet" class="footer-link" data-i18n="nav_fleet">Flota 20 Pojazdów</a>
+            <a href="#strategic" class="footer-link" data-i18n="nav_strategic">Projekt PARP (12M PLN)</a>
+            <a href="#why-us" class="footer-link" data-i18n="nav_why">Znaczenie dla Polski</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="f_col2_title">Usługi Przewozowe</h5>
+          <div class="footer-links">
+            <a href="#services" class="footer-link" data-i18n="service1_title">Transport Całopojazdowy FTL</a>
+            <a href="#services" class="footer-link" data-i18n="service2_title">Transport Drobnicowy LTL</a>
+            <a href="#services" class="footer-link" data-i18n="service3_title">Dostawy Just-In-Time</a>
+            <a href="#services" class="footer-link" data-i18n="corridor_title">Korytarze w Unii Europejskiej</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="f_col3_title">Kontakt & Domena</h5>
+          <div class="footer-links">
+            <span class="footer-link">Domain: <strong>mplinternational.pl</strong></span>
+            <span class="footer-link">Email: <a href="mailto:contact.allzoo@gmail.com" style="color: #38bdf8;">contact.allzoo@gmail.com</a></span>
+            <span class="footer-link">Standard: <strong>Euro 6 / GPS 24/7</strong></span>
+            <span class="footer-link">Zasięg: <strong>Kraje UE</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear"></span> MPL International (mplinternational.pl). Wszelkie prawa zastrzeżone.
+        </div>
+        <div>
+          Projekt Inwestycyjny 12 000 000 PLN | Przygotowany z myślą o PARP i Rozwoju Polskiego Eksportu.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">
+    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <div>
+      <h4 style="font-size: 0.95rem; margin-bottom: 2px;" id="toastTitle">Wiadomość została wysłana!</h4>
+      <p style="font-size: 0.8rem; color: #cbd5e1;" id="toastDesc">Dziękujemy za kontakt. Nasz spedytor odezwie się najszybciej jak to możliwe.</p>
+    </div>
+  </div>
+
+  <!-- Inline Script for Bilingual Toggle, Mobile Nav & Interactions -->
+  <script>
+    // Set dynamic year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // Sticky Header Effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Translation Data Dictionary (Polish and English)
+    const translations = {
+      pl: {
+        top_routes: "Korytarze Transportowe: Cała Unia Europejska",
+        top_fleet: "Flota 20 Ciągników Euro 6 | 100% Niska Emisja",
+        top_parp_tag: "Projekt Inwestycyjny PARP: 12 000 000 PLN",
+        logo_sub: "Logistyka & Transport UE",
+        nav_about: "O nas",
+        nav_fleet: "Flota (20 Ciągników)",
+        nav_services: "Usługi",
+        nav_strategic: "Projekt PARP (12M PLN)",
+        nav_why: "Dlaczego My",
+        nav_contact: "Kontakt",
+        nav_cta: "Zapytaj o Fracht",
+
+        hero_pill_1: "Międzynarodowy Transport Drogowy UE",
+        hero_pill_2: "Inwestycja Strategiczna 12 000 000 PLN",
+        hero_title: 'Nowoczesny Transport Międzynarodowy. <span style="background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Strategiczny Rozwój w Sercu Europy.</span>',
+        hero_desc: "MPL International realizuje regularne przewozy ładunków na kluczowych szlakach Unii Europejskiej. Dysponujemy niezawodną flotą 20 nowoczesnych ciągników siodłowych Euro 6 z zaawansowaną telematyką 24/7. Wdrażamy strategiczny program inwestycyjny o wartości 12 mln PLN wspierający polski sektor TSL i zrównoważoną logistykę europejską.",
+        hero_cta_primary: "Poznaj Projekt 12M PLN",
+        hero_cta_secondary: "Zobacz Naszą Flotę",
+        hero_stats_title: "Wskaźniki Operacyjne & Skala",
+        stat_trucks: "Ciągników Euro 6 w Flocie",
+        stat_project_val: "Wartość Nowego Projektu (PARP)",
+        stat_eu_coverage: "Zasięg Korytarzy UE",
+        stat_ontime: "Wskaźnik Terminowości Dostaw",
+        hero_badge_active: "Monitorowanie GPS & Telematyka Live",
+
+        about_eyebrow: "Kim Jesteśmy",
+        about_title: "Stabilny Partner w Międzynarodowym Transporcie Ciężarowym",
+        about_float_title: "Polska Dynamika, Europejski Zasięg",
+        about_float_desc: "Zintegrowany łańcuch dostaw łączący Polskę z kluczowymi rynkami Europy Zachodniej i Południowej.",
+        about_p1: "<strong>MPL International</strong> to polskie przedsiębiorstwo transportowo-logistyczne zorientowane na realizację bezpiecznych, precyzyjnych przewozów na terenie Unii Europejskiej. Od początku naszej działalności stawiamy na najwyższe standardy techniczne, rzetelność partnerską oraz elastyczność w odpowiedzi na zmienne potrzeby globalnych łańcuchów dostaw.",
+        about_p2: "Obecnie dysponujemy <strong>flotą 20 nowoczesnych jednostek transportowych</strong> spełniających rygorystyczne normy środowiskowe Euro 6. Nasz zespół wykwalifikowanych spedytorów i doświadczonych kierowców gwarantuje nieprzerwaną kontrolę nad ładunkiem od miejsca załadunku po rozładunek w dowolnym punkcie Europy.",
+        about_hl1_title: "Bezpieczeństwo Ładunków",
+        about_hl1_desc: "Pełne ubezpieczenie OCP do wysokości 1 000 000 EUR oraz stały nadzór GPS.",
+        about_hl1_title2: "Dostawy Just-In-Time",
+        about_hl1_desc2: "Precyzyjny dobór tras i podwójne obsady kierowców na trasach krytycznych.",
+        about_hl1_title3: "Cyfrowa Dyspozytornia",
+        about_hl1_desc3: "System ERP/TMS z bezpośrednim dostępem klienta do śledzenia statusu zlecenia.",
+        about_hl1_title4: "Doświadczenie na Rynkach UE",
+        about_hl1_desc4: "Płynna znajomość procedur międzynarodowych i przepisów Pakietu Mobilności.",
+
+        fleet_eyebrow: "Nasze Zaplecze Sprzętowe",
+        fleet_title: "Nowoczesna Flota 20 Ciągników Euro 6",
+        fleet_desc: "Dysponujemy własnym, jednolitym i zaawansowanym taborem pojazdów ciężarowych. Średni wiek naszych pojazdów nie przekracza 2,5 roku, co gwarantuje bezawaryjność, niskie zużycie paliwa oraz minimalną emisję dwutlenku węgla.",
+        fleet_eco_badge: "Standard Ekologiczny Euro 6 Step E",
+        fleet_banner_h3: "20 Zestawów Ciężarowych Gotowych do Trudnych Zadań",
+        fleet_banner_p: "Każdy pojazd we flocie MPL International wyposażony jest w asystentów jazdy, systemy awaryjnego hamowania, telematykę satelitarną oraz certyfikowane naczepy typu Standard i Mega z certyfikatem XL (DIN EN 12642).",
+        tech_pill_1: "20x Ciągniki Euro 6",
+        tech_pill_2: "Telematyka GPS 24/7",
+        tech_pill_3: "Naczepy Certyfikat XL",
+        tech_pill_4: "Eco-Drive & Redukcja CO2",
+        fleet_card1_tag: "Ciągniki Siodłowe",
+        fleet_card1_title: "Klasa Ciężka Euro 6",
+        fleet_card1_desc: "Wydajne jednostki napędowe o mocy 480-500 KM spełniające najbardziej rygorystyczne normy emisji spalin. Optymalizacja zużycia paliwa na dalekich trasach tranzytowych.",
+        fleet_card1_f1: "20 pojazdów w regularnym obiegu",
+        fleet_card1_f2: "Systemy wspomagania kierowcy ADAS",
+        fleet_card2_tag: "Naczepy FTL & Mega",
+        fleet_card2_title: "Pojemność do 100 m³",
+        fleet_card2_desc: "Wielozadaniowe naczepy firanki (Curtainsider) o wysokości wewnętrznej do 3 metrów, wyposażone w podnoszone dachy do szybkiego załadunku suwnicą.",
+        fleet_card2_f1: "33/34 Europalety pojemności",
+        fleet_card2_f2: "Certyfikat Bezpieczeństwa XL (Code-XL)",
+        fleet_card3_tag: "Technologia & AI",
+        fleet_card3_title: "Inteligentna Telematyka",
+        fleet_card3_desc: "Cyfrowa integracja czujników pokładowych, CAN bus, monitoring stylu jazdy kierowcy, natychmiastowe alerty geolokalizacyjne i kalkulacja ETA w czasie rzeczywistym.",
+        fleet_card3_f1: "Podgląd pozycji pojazdu na żywo dla klienta",
+        fleet_card3_f2: "Redukcja pustych kilometrów o 22%",
+
+        services_eyebrow: "Zakres Operacyjny",
+        services_title: "Transport Międzynarodowy & Logistyka",
+        services_desc: "Kompleksowa obsługa ładunków handlowych i przemysłowych na terytorium Unii Europejskiej. Zapewniamy płynność operacyjną, doradztwo transportowe i terminową realizację zleceń.",
+        service1_title: "Transport Całopojazdowy (FTL)",
+        service1_desc: "Dedykowane przewozy całopojazdowe bezpośrednio od nadawcy do odbiorcy bez przeładunków pośrednich. Maksymalne bezpieczeństwo i optymalny czas tranzytu w relacjach międzynarodowych.",
+        s1_l1: "Do 25 ton ładowności",
+        s1_l2: "Stałe linie wahadłowe w UE",
+        s1_l3: "Dedykowany spedytor 24/7",
+        service2_title: "Transport Częściowy & Drobnicowy (LTL)",
+        service2_desc: "Efektywne łączenie mniejszych partii ładunków na tych samych trasach europejskich. Optymalizacja kosztów frachtu przy zachowaniu wysokiej regularności wyjazdów.",
+        s2_l1: "Elastyczne zarządzanie przestrzenią",
+        s2_l2: "Regularne konsolidacje Polska-Zachód",
+        s2_l3: "Bieżący monitoring statusu przesyłki",
+        service3_title: "Przewozy Ekspresowe & Just-In-Time",
+        service3_desc: "Kluczowe rozwiązanie dla branży motoryzacyjnej, elektronicznej i produkcyjnej, gdzie opóźnienie oznacza przestój fabryki. Gwarantowany natychmiastowy podstawienie zestawu.",
+        s3_l1: "Podwójna obsada kierowców",
+        s3_l2: "Priorytetowy czas tranzytu",
+        s3_l3: "Wsparcie dyspozytorskie non-stop",
+        corridor_title: "Główne Korytarze Przewozowe UE",
+        corridor_desc: "Obsługujemy codzienne rotacje na kluczowych szlakach europejskich z pełną znajomością lokalnych regulacji drogowych.",
+
+        strat_badge: "Projekt Rozwojowy: 12 000 000 PLN | PARP / Inwestorzy",
+        strat_title: "Strategiczny Projekt Cyfrowej i Zielonej Transformacji Logistyki",
+        strat_desc: "MPL International przygotowuje wielkoskalowy projekt inwestycyjny o wartości 12 milionów złotych ukierunkowany na wzmocnienie konkurencyjności polskiego transportu na arenie międzynarodowej, dekarbonizację floty i wdrożenie rozwiązań Przemysłu 4.0.",
+        parp_head: "Inwestycja w Polską Infrastrukturę Logistyczną & Nowoczesne Kadry",
+        parp_body: "W ramach wnioskowanego projektu inwestycyjnego, przygotowywanego w relacji z <strong>Polską Agencją Rozwoju Przedsiębiorczości (PARP)</strong> oraz partnerami inwestycyjnymi, MPL International zrealizuje całościową modernizację operacyjną: rozbudowę bazy taborowej, wdrożenie predykcyjnego systemu zarządzania trasami opartego o uczenie maszynowe (AI Logistics Core), optymalizację bilansu energetycznego baz transportowych oraz utworzenie wysokospecjalistycznych miejsc pracy w Polsce.",
+        parp_badge_sub: "Wartość Budżetu Inwestycyjnego",
+        parp_badge_target: "Dedykowane: PARP & Inwestorzy Prywatni",
+        strat_c1_title: "Zielona Flota & Ekologia",
+        strat_c1_desc: "Dalsza redukcja śladu węglowego (GHG Scope 1 & 2), integracja naczep aerodynamicznych, testowanie napędów alternatywnych oraz przygotowanie do elektryfikacji tras regionalnych.",
+        strat_c2_title: "AI & Cyfrowa Telematyka",
+        strat_c2_desc: "Wdrożenie algorytmów predykcyjnych minimalizujących puste przebiegi (Empty Mileage Reduction) o 28%, dynamiczne planowanie tras z uwzględnieniem warunków drogowych i czasu pracy.",
+        strat_c3_title: "Rozbudowa Skali Taboru",
+        strat_c3_desc: "Zwiększenie operacyjnej floty powyżej obecnych 20 zestawów, zakup specjalistycznych naczep typu Mega oraz wdrożenie zautomatyzowanego serwisu prewencyjnego (Predictive Maintenance).",
+        strat_c4_title: "Wzrost Wartości dla Inwestora",
+        strat_c4_desc: "Skalowalny model biznesowy z wysokim wskaźnikiem ROI, zdywersyfikowanym portfelem stałych kontraktów w UE oraz odpornością na cykle koniunkturalne w handlu międzynarodowym.",
+        impact_title: "Dlaczego Ten Projekt Jest Kluczowy dla Polski?",
+        impact_p: "Polska jest niekwestionowanym sercem transportu drogowego w Europie, odpowiadającym za ponad 20% przewozów międzynarodowych w UE. Projekt MPL International o wartości <strong>12 000 000 PLN</strong> bezpośrednio wzmacnia pozycję rodzimych przedsiębiorstw w łańcuchu wartości, zatrzymuje kapitał w kraju, buduje przewagę technologiczną w dobie europejskiego Zielonego Ładu (European Green Deal) oraz generuje stabilne miejsca pracy z europejskimi standardami płacowymi.",
+
+        contact_eyebrow: "Nawiąż Współpracę",
+        contact_title: "Skontaktuj Się z MPL International",
+        contact_desc: "Zapraszamy do kontaktu inwestorów, przedstawicieli instytucji finansujących oraz przedsiębiorstwa poszukujące niezawodnego przewoźnika na liniach międzynarodowych.",
+        ci_card_title: "Dane Kontaktowe",
+        ci_card_desc: "Nasz zespół spedytorów oraz biuro zarządu odpowiada na zapytania operacyjne i inwestycyjne w ciągu maksymalnie 2 godzin.",
+        ci_email_label: "Bezpośredni Adres E-mail",
+        ci_web_label: "Oficjalna Domena",
+        ci_location_label: "Siedziba i Baza Operacyjna",
+        ci_compliance_title: "Dokumentacja Projektu PARP:",
+        ci_compliance_text: "Wszelkie zapytania dotyczące studium wykonalności, biznesplanu 12M PLN oraz audytów technicznych prosimy kierować na adres dedykowany.",
+
+        form_title: "Formularz Zgłoszeniowy & Wycena",
+        form_subtitle: "Wypełnij poniższe pola, a nasz koordynator skontaktuje się z Tobą niezwłocznie.",
+        form_name: "Imię i Nazwisko / Reprezentant *",
+        form_company: "Nazwa Firmy / Instytucji *",
+        form_email: "Adres E-mail *",
+        form_phone: "Numer Telefonu",
+        form_type: "Rodzaj Zapytania *",
+        opt_freight: "Wycena Frachtu Międzynarodowego (FTL / LTL)",
+        opt_parp: "Projekt Rozwojowy 12M PLN / Kontakt PARP / Grant",
+        opt_investor: "Relacje Inwestorskie & Kapitałowe",
+        opt_partner: "Stała Współpraca Spedycyjna",
+        form_msg: "Treść Wiadomości / Specyfikacja Ładunku *",
+        form_submit: "Wyślij Wiadomość",
+
+        footer_desc: "Nowoczesny polski przewoźnik międzynarodowy obsługujący stałe szlaki w Unii Europejskiej. Flota 20 pojazdów Euro 6. Projekt strategiczny 12 000 000 PLN.",
+        f_col1_title: "Firma & Strategia",
+        f_col2_title: "Usługi Przewozowe",
+        f_col3_title: "Kontakt & Domena",
+        toast_title: "Wiadomość została wysłana!",
+        toast_desc: "Dziękujemy za kontakt. Nasz spedytor odezwie się najszybciej jak to możliwe."
+      },
+      en: {
+        top_routes: "Transport Corridors: Across the European Union",
+        top_fleet: "Fleet of 20 Euro 6 Trucks | 100% Low-Emission",
+        top_parp_tag: "PARP Strategic Investment Project: 12,000,000 PLN",
+        logo_sub: "EU Logistics & Transport",
+        nav_about: "About Us",
+        nav_fleet: "Fleet (20 Trucks)",
+        nav_services: "Services",
+        nav_strategic: "PARP Project (12M PLN)",
+        nav_why: "Why Us",
+        nav_contact: "Contact",
+        nav_cta: "Request Freight Quote",
+
+        hero_pill_1: "EU International Road Transport",
+        hero_pill_2: "Strategic Investment: 12,000,000 PLN",
+        hero_title: 'Next-Generation International Logistics. <span style="background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Strategic Expansion Across Europe.</span>',
+        hero_desc: "MPL International provides reliable freight transportation across critical European Union corridors. We operate a high-standard fleet of 20 modern Euro 6 tractor units with 24/7 intelligent telematics. We are actively deploying a 12M PLN strategic expansion project accelerating green logistics, digital corridors, and Polish transport competitiveness.",
+        hero_cta_primary: "Explore the 12M PLN Project",
+        hero_cta_secondary: "View Our Fleet",
+        hero_stats_title: "Operational Key Performance Indicators",
+        stat_trucks: "Modern Euro 6 Trucks in Fleet",
+        stat_project_val: "New Project Value (PARP / Investors)",
+        stat_eu_coverage: "European Route Coverage",
+        stat_ontime: "On-Time Delivery Success Rate",
+        hero_badge_active: "Live GPS & Real-Time Telematics",
+
+        about_eyebrow: "Who We Are",
+        about_title: "A Reliable Partner in European Heavy Road Transport",
+        about_float_title: "Polish Drive, Pan-European Scope",
+        about_float_desc: "Integrated supply chain connecting Poland to Western and Southern European trade epicenters.",
+        about_p1: "<strong>MPL International</strong> is a Polish logistics and freight enterprise dedicated to secure, high-precision transport across the European Union. From day one, we have built our reputation on exemplary technical standards, transparent client partnerships, and swift adaptation to global supply chain challenges.",
+        about_p2: "Today, we operate a <strong>fleet of 20 modern tractor units</strong> complying with strict Euro 6 environmental regulations. Our skilled freight forwarders and seasoned drivers ensure end-to-end cargo integrity from loading dock to final European delivery.",
+        about_hl1_title: "Cargo Protection & Safety",
+        about_hl1_desc: "Comprehensive CMR insurance up to €1,000,000 and round-the-clock GPS tracking.",
+        about_hl1_title2: "Just-In-Time Deliveries",
+        about_hl1_desc2: "Precision route modeling and dual-driver teams for time-critical industrial consignments.",
+        about_hl1_title3: "Digital Dispatch Center",
+        about_hl1_desc3: "Integrated TMS/ERP system offering live status visibility directly to clients.",
+        about_hl1_title4: "EU Market Expertise",
+        about_hl1_desc4: "Complete mastery of international customs, transit rules, and EU Mobility Package compliance.",
+
+        fleet_eyebrow: "Our Equipment & Infrastructure",
+        fleet_title: "Modern Fleet of 20 Euro 6 Trucks",
+        fleet_desc: "We operate our own modern, uniform fleet of heavy commercial vehicles. With an average vehicle age under 2.5 years, we ensure maximum reliability, high fuel efficiency, and lowest possible carbon emissions.",
+        fleet_eco_badge: "Euro 6 Step E Ecological Standard",
+        fleet_banner_h3: "20 Heavy Truck Combinations Ready for Critical Freight",
+        fleet_banner_p: "Every vehicle in the MPL International fleet is fitted with advanced driver-assist systems (ADAS), automatic emergency braking, satellite telematics, and certified Standard & Mega trailers with Code-XL load security.",
+        tech_pill_1: "20x Euro 6 Tractor Units",
+        tech_pill_2: "24/7 Telematics & GPS",
+        tech_pill_3: "Code-XL Certified Trailers",
+        tech_pill_4: "Eco-Drive & CO2 Reduction",
+        fleet_card1_tag: "Tractor Units",
+        fleet_card1_title: "Euro 6 Heavy Duty",
+        fleet_card1_desc: "High-performance 480-500 HP powertrains meeting the toughest European emission benchmarks. Optimized fuel consumption on long-haul continental transit routes.",
+        fleet_card1_f1: "20 units in constant EU circulation",
+        fleet_card1_f2: "Active ADAS driver assistance systems",
+        fleet_card2_tag: "FTL & Mega Trailers",
+        fleet_card2_title: "Up to 100 m³ Volume",
+        fleet_card2_desc: "Multi-purpose curtainsider trailers with 3m internal clearance, equipped with lifting roofs for swift overhead crane loading and high volume industrial cargo.",
+        fleet_card2_f1: "Capacity for 33/34 Euro pallets",
+        fleet_card2_f2: "DIN EN 12642 Code-XL Safety Certificate",
+        fleet_card3_tag: "Technology & AI",
+        fleet_card3_title: "Intelligent Telematics",
+        fleet_card3_desc: "Full digital telemetry via CAN bus, driver eco-score analysis, geofencing alarms, and machine-learning ETA predictions provided directly to clients.",
+        fleet_card3_f1: "Live vehicle location portal for clients",
+        fleet_card3_f2: "22% reduction in empty kilometers",
+
+        services_eyebrow: "Operational Scope",
+        services_title: "International Transport & Logistics Solutions",
+        services_desc: "End-to-end commercial and industrial freight solutions across the European Union. We ensure operational continuity, trade advice, and on-time performance.",
+        service1_title: "Full Truckload (FTL)",
+        service1_desc: "Dedicated full truckload transport directly from sender to recipient without intermediary transshipments. Maximum security and optimal transit times across European borders.",
+        s1_l1: "Up to 25 metric tons capacity",
+        s1_l2: "Regular scheduled shuttle lines in EU",
+        s1_l3: "Dedicated 24/7 logistics manager",
+        service2_title: "Part Load & Groupage (LTL)",
+        service2_desc: "Cost-effective consolidation of partial shipments sharing European transit corridors. High dispatch frequency with predictable delivery windows.",
+        s2_l1: "Flexible volume and bay allocation",
+        s2_l2: "Continuous Poland - Western EU links",
+        s2_l3: "Constant real-time cargo tracking",
+        service3_title: "Express & Just-In-Time Freight",
+        service3_desc: "Mission-critical service for automotive, electronics, and manufacturing plants where any delay stops assembly lines. Immediate vehicle positioning guaranteed.",
+        s3_l1: "Two-driver crews for non-stop runs",
+        s3_l2: "Priority transit lane dispatch",
+        s3_l3: "24/7 dedicated control tower monitoring",
+        corridor_title: "Main EU Transport Corridors",
+        corridor_desc: "We manage daily rotations along primary European economic arteries with in-depth knowledge of local road regulations.",
+
+        strat_badge: "Growth Project: 12,000,000 PLN | PARP / Investors",
+        strat_title: "Strategic Digital & Green Logistics Transformation Project",
+        strat_desc: "MPL International is advancing a major 12,000,000 PLN capital project designed to elevate Polish international freight competitiveness, achieve fleet decarbonization, and adopt Industry 4.0 innovations.",
+        parp_head: "Investing in Poland's Logistics Powerhouse & High-Skill Jobs",
+        parp_body: "As part of the strategic investment proposal developed for the <strong>Polish Agency for Enterprise Development (PARP)</strong> and co-investment partners, MPL International will execute a holistic operational upgrade: scaling our operational fleet, rolling out predictive machine learning dispatch systems (AI Logistics Core), improving energy efficiency at operating bases, and creating top-tier jobs in Poland.",
+        parp_badge_sub: "Total Investment Budget",
+        parp_badge_target: "Targeted to: PARP & Private Investors",
+        strat_c1_title: "Green Fleet & Decarbonization",
+        strat_c1_desc: "Direct reduction of GHG Scope 1 & 2 emissions, deployment of low-drag aero trailers, alternative fuel field trials, and preparing for regional EV haulage corridors.",
+        strat_c2_title: "AI & Digital Telematics",
+        strat_c2_desc: "Implementation of AI routing reducing empty mileage by 28%, dynamic route optimization adjusting in real-time for traffic restrictions, weather, and driving hours.",
+        strat_c3_title: "Fleet Scale Expansion",
+        strat_c3_desc: "Scaling operational capacity beyond current 20 tractor-trailer combinations, adding high-cube mega units, and integrating automated predictive maintenance.",
+        strat_c4_title: "High Investor Value & ROI",
+        strat_c4_desc: "A scalable, asset-backed business model delivering resilient return on investment, diversified recurring contract base, and robust insulation from economic fluctuations.",
+        impact_title: "Why Is This Project Vital for Poland?",
+        impact_p: "Poland is the undisputed backbone of road freight in Europe, carrying over 20% of all international road cargo in the EU. MPL International's <strong>12,000,000 PLN</strong> initiative directly reinforces domestic enterprise standing within the European supply chain, retains economic capital in Poland, spearheads European Green Deal compliance, and creates stable jobs with top-tier employment standards.",
+
+        contact_eyebrow: "Get in Touch",
+        contact_title: "Connect with MPL International",
+        contact_desc: "We welcome dialogue with investors, financing institutions, and commercial clients seeking dependable international freight partnerships.",
+        ci_card_title: "Corporate Contact Details",
+        ci_card_desc: "Our dispatchers and management board reply to operational inquiries and investment briefs within 2 hours.",
+        ci_email_label: "Direct Email Address",
+        ci_web_label: "Official Domain",
+        ci_location_label: "Headquarters & Operational Base",
+        ci_compliance_title: "PARP Project Documentation:",
+        ci_compliance_text: "For access to our feasibility study, 12M PLN business plan, and technical audit data, please contact our dedicated office.",
+
+        form_title: "Freight Inquiry & Investor Form",
+        form_subtitle: "Please fill out the form below. Our coordination team will reach out promptly.",
+        form_name: "Full Name / Representative *",
+        form_company: "Company / Institution Name *",
+        form_email: "Email Address *",
+        form_phone: "Phone Number",
+        form_type: "Inquiry Category *",
+        opt_freight: "International Freight Quote (FTL / LTL)",
+        opt_parp: "12M PLN Growth Project / PARP Grant / Institutional",
+        opt_investor: "Investor Relations & Equity Inquiries",
+        opt_partner: "Long-Term Logistics Partnership",
+        form_msg: "Message / Cargo Details & Specifications *",
+        form_submit: "Send Message",
+
+        footer_desc: "Modern Polish international freight carrier operating dedicated European Union trade lanes. Fleet of 20 Euro 6 units. Strategic 12,000,000 PLN investment project.",
+        f_col1_title: "Company & Strategy",
+        f_col2_title: "Freight Services",
+        f_col3_title: "Contact & Domain",
+        toast_title: "Message Successfully Sent!",
+        toast_desc: "Thank you for reaching out. Our freight coordinator will contact you shortly."
+      }
+    };
+
+    let currentLang = 'pl';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      // Update buttons
+      document.getElementById('btnPl').classList.toggle('active', lang === 'pl');
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+      
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+
+      // Update all elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+    }
+
+    // Form submission simulation
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const toast = document.getElementById('toast');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastDesc = document.getElementById('toastDesc');
+
+      toastTitle.textContent = currentLang === 'pl' ? 'Wiadomość została wysłana!' : 'Message Successfully Sent!';
+      toastDesc.textContent = currentLang === 'pl' 
+        ? 'Dziękujemy za kontakt. Nasz spedytor odezwie się najszybciej jak to możliwe.' 
+        : 'Thank you for reaching out. Our freight coordinator will contact you shortly.';
+
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 5000);
+
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
