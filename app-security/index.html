@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL OCHRONA — Licensed Security Network, Escort & 24/7 SOC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070d17;
+      --card-bg: #0f172a;
+      --border: #1e293b;
+      --primary: #0284c7;
+      --accent: #38bdf8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .ecosystem-nav {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+    .back-home {
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .app-switcher-select {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 440px;
+      background: #020617;
+      border: 8px solid #1e293b;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 840px;
+    }
+    .phone-notch {
+      width: 140px;
+      height: 22px;
+      background: #1e293b;
+      margin: 0 auto;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      z-index: 20;
+    }
+
+    .app-header {
+      background: #0a1322;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .app-logo span {
+      color: #ef4444;
+      font-size: 0.75rem;
+      background: rgba(239, 68, 68, 0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .soc-pill {
+      background: #1e293b;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--success);
+      border: 1px solid #334155;
+    }
+
+    .tabs {
+      display: flex;
+      background: #0f172a;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 4px;
+      text-align: center;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: #ef4444;
+      border-bottom: 2px solid #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    .screen-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ui-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .soc-banner {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+    .soc-banner-title {
+      color: #f87171;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-k { color: var(--text-muted); }
+    .detail-v { color: #fff; font-weight: 600; text-align: right; }
+
+    .panic-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+      transition: all 0.2s;
+    }
+    .panic-btn:hover {
+      transform: scale(0.99);
+      opacity: 0.95;
+    }
+
+    .tactical-car-badge {
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toast-pill {
+      background: #ef4444;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ecosystem-nav">
+    <a href="/" class="back-home">← MPL Platform Home</a>
+    <select class="app-switcher-select" onchange="if(this.value) window.location.href=this.value;">
+      <option value="/app-transport/">App 1: MPL Transport</option>
+      <option value="/app-warehouse/">App 2: MPL Magazyny</option>
+      <option value="/app-security/" selected>App 3: MPL Ochrona</option>
+      <option value="/app-insurance/">App 4: MPL Ubezpieczenia</option>
+    </select>
+  </div>
+
+  <div class="phone-frame">
+    <div class="phone-notch"></div>
+
+    <header class="app-header">
+      <div class="app-logo">
+        MPL OCHRONA <span>SOC</span>
+      </div>
+      <div class="soc-pill" id="socPill">SOC: NOMINAL</div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="switchTab('soc', this)">24/7 SOC</button>
+      <button class="tab-btn" onclick="switchTab('escort', this)">Armed Escort</button>
+      <button class="tab-btn" onclick="switchTab('geofence', this)">Geofence</button>
+      <button class="tab-btn" onclick="switchTab('parking', this)">Class 4/5 Park</button>
+    </nav>
+
+    <main class="screen-content">
+      <div id="toastPill" class="toast-pill">Alert Synced to 24/7 Control Tower</div>
+
+      <!-- Tab 1: SOC Tower -->
+      <section id="tab-soc" class="tab-pane">
+        <div class="soc-banner">
+          <div class="soc-banner-title">467 Licensed Security Agencies in EU</div>
+          <div style="color: var(--text-muted); font-size: 0.72rem;">Centralized Dispatch • MSWiA Polish Ministry of Interior Licensed</div>
+        </div>
+
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Control Tower Live Telemetry</span>
+            <span style="color: var(--success); font-size: 0.7rem;">● ONLINE</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Protected Shipment</span>
+            <span class="detail-v" style="color: var(--accent);">MPL-2026-EU-9481</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Security Provider</span>
+            <span class="detail-v">Konsalnet Security Poland</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">MSWiA License</span>
+            <span class="detail-v">#RD-1482/2026</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Kingpin Electronic Lock</span>
+            <span class="detail-v" style="color: var(--success);">ENGAGED (Tamper Proof)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Anti-Jamming Watchdog</span>
+            <span class="detail-v" style="color: var(--success);">ACTIVE (RF 868MHz)</span>
+          </div>
+        </div>
+
+        <!-- Panic Button -->
+        <button class="panic-btn" onclick="triggerPanic()">
+          🚨 PANIC BUTTON — SOS TO SOC & POLICJA
+        </button>
+        <p style="text-align: center; font-size: 0.68rem; color: var(--text-muted); margin-top: 4px;">
+          Instantly triggers P1 alert, locks vehicle engine, and dispatches tactical police response.
+        </p>
+      </section>
+
+      <!-- Tab 2: Escort -->
+      <section id="tab-escort" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Armed Tactical Convoy</span>
+            <span style="color: var(--accent); font-size: 0.7rem;">TAPA TSR-1 Class</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Escort Status</span>
+            <span class="detail-v" id="escortStatusTxt" style="color: var(--success);">TACTICAL PATROL ACTIVE</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Licensed Operatives</span>
+            <span class="detail-v">2 Armed Guards (Glock 17 / Armor Level 4)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Chase Vehicle</span>
+            <span class="detail-v">Skoda Superb 4x4 (Plate: WZ 9901S)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Tactical Radio Channel</span>
+            <span class="detail-v" style="font-family: monospace;">CH-14 (Encrypted DMR)</span>
+          </div>
+        </div>
+
+        <button class="panic-btn" style="background: linear-gradient(135deg, #0284c7, #0369a1); box-shadow: none;" onclick="requestBackup()">
+          🛡️ Request Backup Patrol Car
+        </button>
+      </section>
+
+      <!-- Tab 3: Geofence -->
+      <section id="tab-geofence" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>IoT Corridor & Anti-Theft Geofence</span>
+            <span style="color: var(--success); font-size: 0.7rem;">SECURE</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Corridor Route</span>
+            <span class="detail-v">DK12 / S12 Authorized Freight Path</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Corridor Width</span>
+            <span class="detail-v">± 500 meters</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Current Deviation</span>
+            <span class="detail-v" style="color: var(--success);">14 meters (Optimal)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Cargo Door Sensor</span>
+            <span class="detail-v" style="color: var(--success);">SEALED & UNBROKEN</span>
+          </div>
+        </div>
+
+        <div class="ui-card" style="background: #020617; border-color: #1e293b; font-size: 0.72rem; color: var(--text-muted);">
+          Automated Hard-Gate: Any route deviation exceeding 500m triggers automatic Limp Mode on the Euro 6 engine CAN-bus, preventing unauthorized border diversion.
+        </div>
+      </section>
+
+      <!-- Tab 4: Class 4/5 Parking -->
+      <section id="tab-parking" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Secured Class 4/5 Truck Parking</span>
+            <span style="color: #fbbf24; font-size: 0.7rem;">ESPA GOLD</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Facility Name</span>
+            <span class="detail-v">Chełm Secure Terminal Park #02</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Perimeter Standard</span>
+            <span class="detail-v">3.0m Double Fence + Thermal IR</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">24/7 Guard Presence</span>
+            <span class="detail-v" style="color: var(--success);">Active On-Site</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Driver Rest Mode</span>
+            <span class="detail-v" style="color: var(--accent);">Sleep Guard Activated</span>
+          </div>
+        </div>
+
+        <div style="background: #020617; border: 1px dashed #334155; border-radius: 10px; padding: 14px; text-align: center;">
+          <div style="color: var(--text-muted); font-size: 0.7rem;">GATE AUTOMATION BARRIER PIN</div>
+          <div style="color: #fbbf24; font-size: 1.4rem; font-weight: 800; font-family: monospace; letter-spacing: 2px; margin-top: 4px;">
+            # 9 4 8 1 *
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function switchTab(tabId, el) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+      el.classList.add('active');
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+
+    function showToast(msg, bg) {
+      const toast = document.getElementById('toastPill');
+      toast.textContent = msg;
+      if (bg) toast.style.background = bg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3200);
+    }
+
+    function triggerPanic() {
+      document.getElementById('socPill').textContent = 'SOC: CRITICAL P1';
+      document.getElementById('socPill').style.color = '#ef4444';
+      document.getElementById('socPill').style.borderColor = '#ef4444';
+      showToast('🚨 SOS EMERGENCY SENT! SOC & POLICJA DISPATCHED', '#ef4444');
+    }
+
+    function requestBackup() {
+      showToast('Tactical Unit Escort Alpha-2 Confirmed & Dispatched', '#10b981');
+    }
+  </script>
+</body>
+</html>
