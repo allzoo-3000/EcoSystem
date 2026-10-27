@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL UBEZPIECZENIA — 90-Second Cargo & OCP Insurance (PZU, Warta, Allianz)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070d17;
+      --card-bg: #0f172a;
+      --border: #1e293b;
+      --primary: #0284c7;
+      --accent: #38bdf8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --gold: #fbbf24;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .ecosystem-nav {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+    .back-home {
+      color: var(--accent);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .app-switcher-select {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 440px;
+      background: #020617;
+      border: 8px solid #1e293b;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 840px;
+    }
+    .phone-notch {
+      width: 140px;
+      height: 22px;
+      background: #1e293b;
+      margin: 0 auto;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      z-index: 20;
+    }
+
+    .app-header {
+      background: #0a1322;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .app-logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .app-logo span {
+      color: var(--gold);
+      font-size: 0.75rem;
+      background: rgba(251, 191, 36, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+    .shipment-pill {
+      background: #1e293b;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--gold);
+      border: 1px solid #334155;
+    }
+
+    .tabs {
+      display: flex;
+      background: #0f172a;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 10px 4px;
+      text-align: center;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      background: rgba(251, 191, 36, 0.08);
+    }
+
+    .screen-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ui-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .insurance-banner {
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+    .insurance-banner-title {
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .quote-row {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .quote-row:hover, .quote-row.selected {
+      border-color: var(--gold);
+      background: rgba(251, 191, 36, 0.05);
+    }
+    .quote-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .quote-insurer {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .quote-price {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .quote-details {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .quote-badge-row {
+      display: flex;
+      gap: 8px;
+      font-size: 0.68rem;
+    }
+    .quote-badge {
+      background: #020617;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid #1e293b;
+      color: #cbd5e1;
+    }
+
+    .bind-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      color: #000;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .bind-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-k { color: var(--text-muted); }
+    .detail-v { color: #fff; font-weight: 600; text-align: right; }
+
+    .ocr-scan-screen {
+      background: #020617;
+      border: 1px dashed #334155;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+    }
+    .ocr-tag {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid #10b981;
+      color: #10b981;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-family: monospace;
+      margin: 2px 0;
+    }
+
+    .toast-pill {
+      background: #10b981;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ecosystem-nav">
+    <a href="/" class="back-home">← MPL Platform Home</a>
+    <select class="app-switcher-select" onchange="if(this.value) window.location.href=this.value;">
+      <option value="/app-transport/">App 1: MPL Transport</option>
+      <option value="/app-warehouse/">App 2: MPL Magazyny</option>
+      <option value="/app-security/">App 3: MPL Ochrona</option>
+      <option value="/app-insurance/" selected>App 4: MPL Ubezpieczenia</option>
+    </select>
+  </div>
+
+  <div class="phone-frame">
+    <div class="phone-notch"></div>
+
+    <header class="app-header">
+      <div class="app-logo">
+        MPL UBEZPIECZENIA <span>90s API</span>
+      </div>
+      <div class="shipment-pill">SHP-9481</div>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="switchTab('quote', this)">90s Bind</button>
+      <button class="tab-btn" onclick="switchTab('ocr', this)">Doc AI OCR</button>
+      <button class="tab-btn" onclick="switchTab('policy', this)">Active Policy</button>
+      <button class="tab-btn" onclick="switchTab('claims', this)">Claims</button>
+    </nav>
+
+    <main class="screen-content">
+      <div id="toastPill" class="toast-pill">Policy Issued via PZU API</div>
+
+      <!-- Tab 1: 90s Bind -->
+      <section id="tab-quote" class="tab-pane">
+        <div class="insurance-banner">
+          <div class="insurance-banner-title">⚡ 90-Second Instant Underwriting</div>
+          <div style="color: var(--text-muted); font-size: 0.72rem;">Multi-carrier live API: PZU, Warta, Allianz Partners • Verified OCP</div>
+        </div>
+
+        <div style="font-size: 0.8rem; font-weight: 700; margin: 8px 0 4px; color: #fff;">
+          Available Underwriters for SHP-9481:
+        </div>
+
+        <div class="quote-row selected" onclick="selectInsurer(this, 'PZU', '€145')">
+          <div class="quote-top">
+            <span class="quote-insurer">PZU SA</span>
+            <span class="quote-price">€145</span>
+          </div>
+          <div class="quote-details">OCP Carrier Liability + All-Risk Cargo (€300,000 limit)</div>
+          <div class="quote-badge-row">
+            <span class="quote-badge">Avg Bind: <strong>68s</strong></span>
+            <span class="quote-badge" style="color: #10b981;">TAPA TSR-1 Discount -25%</span>
+          </div>
+        </div>
+
+        <div class="quote-row" onclick="selectInsurer(this, 'WARTA', '€152')">
+          <div class="quote-top">
+            <span class="quote-insurer">TUiR WARTA</span>
+            <span class="quote-price">€152</span>
+          </div>
+          <div class="quote-details">Full EU Transit + T1 Customs Bond (€300,000 limit)</div>
+          <div class="quote-badge-row">
+            <span class="quote-badge">Avg Bind: <strong>74s</strong></span>
+            <span class="quote-badge">Includes Border Delay Rider</span>
+          </div>
+        </div>
+
+        <div class="quote-row" onclick="selectInsurer(this, 'ALLIANZ', '€189')">
+          <div class="quote-top">
+            <span class="quote-insurer">ALLIANZ PARTNERS</span>
+            <span class="quote-price">€189</span>
+          </div>
+          <div class="quote-details">High-Value Electronics Shield (€500,000 limit)</div>
+          <div class="quote-badge-row">
+            <span class="quote-badge">Avg Bind: <strong>88s</strong></span>
+            <span class="quote-badge">Armed Escort Protocol Linked</span>
+          </div>
+        </div>
+
+        <button class="bind-btn" onclick="bindPolicy()">
+          ⏱️ Issue Policy via API (&lt; 90 Seconds)
+        </button>
+      </section>
+
+      <!-- Tab 2: Doc AI OCR -->
+      <section id="tab-ocr" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Google Document AI OCR</span>
+            <span style="color: var(--success); font-size: 0.7rem;">99.4% Confidence</span>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px;">
+            e-CMR and commercial invoice automatically parsed to bind insurance risk profile without manual re-keying:
+          </p>
+
+          <div class="ocr-scan-screen">
+            <div style="font-size: 0.7rem; color: var(--accent); margin-bottom: 6px; font-weight: 700;">
+              EXTRACTED OCR ENTITIES:
+            </div>
+            <div>Carrier NIP: <span class="ocr-tag">1133135478 (MPL International)</span></div>
+            <div>Insured Voyage: <span class="ocr-tag">Warsaw (PL) → Dorohusk / UA</span></div>
+            <div>Declared Cargo Value: <span class="ocr-tag">€ 184,500.00 EUR</span></div>
+            <div>Cargo Category: <span class="ocr-tag">Electronics / High Value</span></div>
+            <div>Vehicle Plate: <span class="ocr-tag">WI 8842P</span></div>
+            <div>TAPA TSR Seal: <span class="ocr-tag">PL-SEAL-9481-OK</span></div>
+          </div>
+        </div>
+
+        <button class="bind-btn" style="background: var(--primary); color: #fff;" onclick="showToast('Document AI Model Reparsed Document in 420ms')">
+          📄 Run Document AI OCR Analysis
+        </button>
+      </section>
+
+      <!-- Tab 3: Active Policy -->
+      <section id="tab-policy" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Active Insurance Certificate</span>
+            <span style="color: var(--success); font-size: 0.7rem;">● BOUND</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Policy Number</span>
+            <span class="detail-v" style="font-family: monospace; color: var(--gold);">POL-2026-PZU-9481</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Underwriter</span>
+            <span class="detail-v">PZU SA</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Policyholder</span>
+            <span class="detail-v">MPL INTERNATIONAL SP. Z O.O.</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Tax ID</span>
+            <span class="detail-v">NIP 1133135478 (Warsaw)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Insured Value Limit</span>
+            <span class="detail-v">€ 300,000.00</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Issuance Speed</span>
+            <span class="detail-v" style="color: var(--success);">72 seconds (Target &lt; 90s)</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Linked Shipment</span>
+            <span class="detail-v" style="color: var(--accent);">MPL-2026-EU-9481</span>
+          </div>
+        </div>
+
+        <button class="bind-btn" style="background: #1e293b; color: #fff; border: 1px solid #334155;" onclick="showToast('Policy Certificate PDF generated from Google Cloud Storage')">
+          📥 Download Certificate PDF
+        </button>
+      </section>
+
+      <!-- Tab 4: Claims -->
+      <section id="tab-claims" class="tab-pane" style="display: none;">
+        <div class="ui-card">
+          <div class="card-title">
+            <span>Instant Digital Claims (FNOL)</span>
+            <span style="color: #ef4444; font-size: 0.7rem;">ZERO PAPER</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">FNOL Pipeline</span>
+            <span class="detail-v">Direct API to PZU / Warta Claims</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Telemetry Packet</span>
+            <span class="detail-v">GPS + SOC logs pre-packaged</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-k">Average Payout Review</span>
+            <span class="detail-v" style="color: var(--success);">&lt; 48 hours</span>
+          </div>
+        </div>
+
+        <button class="bind-btn" style="background: #ef4444; color: #fff;" onclick="showToast('FNOL Claim Dossier #CLM-9481 Dispatched to PZU Claims')">
+          🚨 Submit First Notice of Loss (FNOL)
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function switchTab(tabId, el) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.style.display = 'none');
+      el.classList.add('active');
+      document.getElementById('tab-' + tabId).style.display = 'block';
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastPill');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3200);
+    }
+
+    function selectInsurer(el, insurer, price) {
+      document.querySelectorAll('.quote-row').forEach(r => r.classList.remove('selected'));
+      el.classList.add('selected');
+      showToast('Selected ' + insurer + ' (' + price + ')');
+    }
+
+    function bindPolicy() {
+      showToast('⚡ Instant Underwriting Triggered... Policy Bound in 72s!');
+      setTimeout(() => {
+        switchTab('policy', document.querySelectorAll('.tab-btn')[2]);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

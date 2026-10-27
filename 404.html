@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Redirecting | MPL Logistics Platform</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070d17;
+      --card-bg: #0f172a;
+      --border: #1e293b;
+      --primary: #0284c7;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      max-width: 600px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 36px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .timer {
+      font-family: monospace;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .app-link {
+      display: block;
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 12px;
+      border-radius: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    .app-link:hover {
+      background: var(--primary);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .btn-home {
+      display: inline-block;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+    .btn-home:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+  </style>
+  <script>
+    // GitHub Pages SPA & Search Console Redirect Resolver
+    (function() {
+      const path = window.location.pathname;
+      const lower = path.toLowerCase();
+      
+      // If the URL is trying to access an app prototype without trailing slash
+      if (lower.includes('/app-transport')) {
+        window.location.replace('/app-transport/');
+        return;
+      }
+      if (lower.includes('/app-warehouse')) {
+        window.location.replace('/app-warehouse/');
+        return;
+      }
+      if (lower.includes('/app-security')) {
+        window.location.replace('/app-security/');
+        return;
+      }
+      if (lower.includes('/app-insurance')) {
+        window.location.replace('/app-insurance/');
+        return;
+      }
+      
+      // Auto-redirect to home page after 3 seconds if not redirected
+      let seconds = 3;
+      const interval = setInterval(function() {
+        seconds--;
+        const el = document.getElementById('countdown');
+        if (el) el.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(interval);
+          window.location.replace('/');
+        }
+      }, 1000);
+    })();
+  </script>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">
+      <span>●</span> MPL Logistics OS Network Router
+    </div>
+    <h1>Route Not Found (404)</h1>
+    <p>The requested logistics corridor or document is unavailable. Automatically re-routing to the MPL Central Platform in <span id="countdown" class="timer">3</span> seconds...</p>
+    
+    <div class="apps-grid">
+      <a href="/app-transport/" class="app-link">🚚 MPL Transport App</a>
+      <a href="/app-warehouse/" class="app-link">🏬 MPL Magazyny App</a>
+      <a href="/app-security/" class="app-link">🛡️ MPL Ochrona App</a>
+      <a href="/app-insurance/" class="app-link">📑 MPL Ubezpieczenia App</a>
+    </div>
+
+    <a href="/" class="btn-home">Return to Platform Home</a>
+  </div>
+</body>
+</html>
